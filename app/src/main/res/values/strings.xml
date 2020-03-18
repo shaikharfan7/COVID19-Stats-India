@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">COVID19 Stats India</string>
+
+    <string-array name="states_array">
+        <item>Andhra Pradesh</item>
+        <item>Arunachal Pradesh</item>
+        <item>Assam</item>
+        <item>Bihar</item>
+        <item>Chhattisgarh</item>
+        <item>Goa</item>
+        <item>Gujarat</item>
+        <item>Haryana</item>
+        <item>Himachal Pradesh</item>
+        <item>Jharkhand</item>
+        <item>Karnataka</item>
+        <item>Kerala</item>
+        <item>Madhya Pradesh</item>
+        <item>Maharashtra</item>
+        <item>Manipur</item>
+        <item>Meghalaya</item>
+
+        <item>Mizoram</item>
+        <item>Nagaland</item>
+        <item>Odisha</item>
+        <item>Punjab</item>
+        <item>Rajasthan</item>
+        <item>Sikkim</item>
+        <item>Tamil Nadu</item>
+        <item>Telengana</item>
+        <item>Tripura</item>
+        <item>Uttarakhand</item>
+        <item>Uttar Pradesh</item>
+        <item>West Bengal</item>
+        <item>Andaman and Nicobar Islands</item>
+        <item>Chandigarh</item>
+        <item>Dadra and Nagar Haveli and Daman &amp; Diu</item>
+        <item>Delhi</item>
+        <item>Union Territory of Jammu and Kashmir</item>
+        <item>Union Territory of Ladakh</item>
+        <item>Lakshadweep</item>
+        <item>Puducherry</item>
+    </string-array>
+    <string name="appwidget_text">COVID19 Stats India</string>
+    <string name="configure">Configure</string>
+    <string name="add_widget">Add widget</string>
+
+
+</resources>
