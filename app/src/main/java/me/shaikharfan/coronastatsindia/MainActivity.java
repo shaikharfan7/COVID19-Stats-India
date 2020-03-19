@@ -130,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         th1.start();
-        th2.start();
+        //th2.start();
         while (th1.isAlive()){
         locTotal.setText(localTotal);
         IntTotVal.setText(intTotal);
@@ -184,11 +184,12 @@ public class MainActivity extends AppCompatActivity {
 
         switch (item.getItemId()){
             case R.id.item1:
-                Toast.makeText(this, "item1", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(this, UsefulResources.class);
+                startActivity(intent);
                 return true;
             case R.id.item2:
-                Intent intent = new Intent(this, About.class);
-                startActivity(intent);
+                Intent intent1 = new Intent(this, About.class);
+                startActivity(intent1);
                 return true;
             case R.id.item3:
                 finish();

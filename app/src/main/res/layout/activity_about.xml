@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="@color/colorPrimaryDark"
     android:screenOrientation="portrait"
     tools:context=".About">
 
@@ -68,9 +68,9 @@
             android:layout_height="wrap_content"
             android:id="@+id/shaikharfan.me"
             android:src="@drawable/site_button"
+            android:onClick="onTapArfan"
             android:text="shaikharfan.me"
             android:textAlignment="center"
-            android:onClick="onTapArfan"
             android:layout_gravity="center"
             android:textColor="#FFFFFF">
 
