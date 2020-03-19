@@ -187,7 +187,8 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "item1", Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.item2:
-                Toast.makeText(this, "item2", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(this, About.class);
+                startActivity(intent);
                 return true;
             case R.id.item3:
                 finish();
