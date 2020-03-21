@@ -13,12 +13,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UsefulResources"></activity>
+
         <activity
             android:name=".About"
             android:label="@string/title_activity_about"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="me.shaikharfan.coronastatsindia.MainActivity" />
+        </activity>
+
+        <activity
+            android:name=".UsefulResources"
+            android:label="Useful Resources"
+            android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="me.shaikharfan.coronastatsindia.MainActivity" />

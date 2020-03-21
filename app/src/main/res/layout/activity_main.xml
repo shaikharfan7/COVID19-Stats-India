@@ -1,219 +1,25 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryDark"
+    android:orientation="vertical"
     android:screenOrientation="portrait"
     tools:context=".MainActivity">
 
-
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:background="@color/colorPrimaryDark">
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginRight="30dp"
-            android:orientation="horizontal">
-
-            <Spinner
-                android:id="@id/textState"
-                android:layout_width="250dp"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="25dp"
-                android:layout_marginRight="35dp"
-                android:layout_marginBottom="20dp"
-                android:background="@color/colorPrimary"
-                android:popupBackground="@color/colorPrimary"
-                android:spinnerMode="dialog"
-                android:textColor="#FFFFFF" />
-
-            <Button
-                android:id="@+id/update"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
-                android:background="#38352F"
-                android:onClick="updateState"
-                android:text="Update"
-                android:textColor="@color/cardview_light_background">
-
-            </Button>
-        </LinearLayout>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginBottom="20dp"
-            app:cardBackgroundColor="#38352F"
-            >
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/updatedStateName"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:textColor="@color/cardview_light_background">
-
-                </TextView>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                >
-                <TextView
-                    android:id="@+id/cases"
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginBottom="5dp"
-                    android:textColor="@color/cardview_light_background">
-
-                </TextView>
-
-                <TextView
-                    android:id="@+id/casesval"
-                    android:layout_width="50dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="85dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginBottom="5dp"
-                    android:layout_alignParentLeft="true"
-                    android:textAlignment="center"
-                    android:textColor="@color/cardview_light_background">
-
-                </TextView>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                >
-
-                <TextView
-                    android:id="@+id/cured_discharged"
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginBottom="5dp"
-                    android:textColor="@color/cardview_light_background"></TextView>
-
-                <TextView
-                    android:id="@+id/cured_dischargedval"
-                    android:layout_width="50dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="85dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginBottom="5dp"
-                    android:layout_alignParentLeft="true"
-                    android:textAlignment="center"
-                    android:textColor="@color/cardview_light_background">
-
-                </TextView>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                >
-                <TextView
-                    android:id="@+id/deathState"
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginBottom="5dp"
-                    android:textColor="@color/cardview_light_background"></TextView>
-
-                <TextView
-                    android:id="@+id/deathStateVal"
-                    android:layout_width="50dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="85dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginBottom="5dp"
-                    android:layout_alignParentLeft="true"
-                    android:textAlignment="center"
-                    android:textColor="@color/cardview_light_background">
-
-                </TextView>
-
-            </LinearLayout>
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:id="@+id/helplinecard"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginBottom="20dp"
-            app:cardBackgroundColor="#38352F"
-            >
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/helpline"
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:textColor="@color/cardview_light_background">
-
-                </TextView>
-
-                <TextView
-                    android:id="@+id/stateHelplineval"
-                    android:layout_width="130dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginRight="10dp"
-                    android:autoLink="phone"
-                    android:layout_marginBottom="5dp"
-                    android:textColor="@color/cardview_light_background">
-
-                </TextView>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        >
+    <androidx.cardview.widget.CardView
             android:id="@+id/card2"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content"
+
+        android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:layout_marginBottom="20dp"
             app:cardBackgroundColor="#38352F"
@@ -229,7 +35,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginBottom="5dp"
                     android:textColor="@color/cardview_light_background">
 
@@ -245,6 +51,7 @@
                     android:id="@+id/localtotal"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginBottom="5dp"
                     android:textColor="@color/cardview_light_background">
@@ -253,20 +60,19 @@
 
                 <TextView
                     android:id="@+id/localtotalval"
-                    android:layout_width="50dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="85dp"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginRight="30dp"
+                    android:gravity="right"
                     android:layout_marginBottom="5dp"
                     android:textColor="@color/cardview_light_background"
-                    android:layout_alignParentLeft="true"
-                    android:textAlignment="center">
+                    android:layout_alignParentLeft="true">
 
                 </TextView>
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
                 >
@@ -277,18 +83,19 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginBottom="5dp"
+
+                    android:layout_marginRight="10dp"
                     android:textColor="@color/cardview_light_background"></TextView>
 
                 <TextView
                     android:id="@+id/intertotal"
-                    android:layout_width="50dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="85dp"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginRight="30dp"
+                    android:gravity="right"
                     android:layout_marginBottom="5dp"
                     android:textColor="@color/cardview_light_background"
-                    android:layout_alignParentLeft="true"
-                    android:textAlignment="center">
+                    android:layout_alignParentLeft="true">
 
                 </TextView>
 
@@ -304,19 +111,20 @@
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
+
+                    android:layout_marginRight="10dp"
                     android:layout_marginBottom="5dp"
                     android:textColor="@color/cardview_light_background"></TextView>
 
                 <TextView
                     android:id="@+id/totalval"
-                    android:layout_width="50dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="85dp"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginRight="30dp"
+                    android:gravity="right"
                     android:layout_marginBottom="5dp"
                     android:textColor="@color/cardview_light_background"
-                    android:layout_alignParentLeft="true"
-                    android:textAlignment="center">
+                    android:layout_alignParentLeft="true">
 
                 </TextView>
 
@@ -331,20 +139,20 @@
                     android:id="@+id/curedtotal"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginBottom="5dp"
                     android:textColor="@color/cardview_light_background"></TextView>
 
                 <TextView
                     android:id="@+id/curedtotalval"
-                    android:layout_width="50dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="85dp"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginRight="30dp"
+                    android:gravity="right"
                     android:layout_marginBottom="5dp"
                     android:textColor="@color/cardview_light_background"
-                    android:layout_alignParentLeft="true"
-                    android:textAlignment="center">
+                    android:layout_alignParentLeft="true">
 
                 </TextView>
 
@@ -359,20 +167,22 @@
                     android:id="@+id/deathstotal"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
+                    android:gravity="left"
+
+                    android:layout_marginRight="10dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginBottom="5dp"
                     android:textColor="@color/cardview_light_background"></TextView>
 
                 <TextView
                     android:id="@+id/deathstotalval"
-                    android:layout_width="50dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="85dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_alignParentLeft="true"
-                    android:textAlignment="center"
-                    android:layout_marginBottom="5dp"
-                    android:textColor="@color/cardview_light_background">
+                    android:layout_marginRight="30dp"
+                    android:gravity="right"
+                    android:layout_marginBottom="10dp"
+                    android:textColor="@color/cardview_light_background"
+                    android:layout_alignParentLeft="true">
 
                 </TextView>
 
@@ -381,38 +191,49 @@
 
         </androidx.cardview.widget.CardView>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="50dp"
-            android:textAlignment="center"
-            android:orientation="horizontal">
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="bottom"
+        android:orientation="vertical"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp">
 
         <TextView
             android:id="@+id/twitter"
-            android:layout_width="263dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="60dp"
-            android:layout_marginTop="10dp"
+            android:layout_margin="30dp"
             android:text="For regular updates follow @COVID19_INDIA"
             android:textAlignment="center"
-            android:textColor="@color/cardview_light_background"></TextView>
+            android:textColor="@color/cardview_light_background"
+            android:textSize="14sp"></TextView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:background="@color/colorPrimary"
+
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="@color/colorPrimary"
+            android:layout_marginBottom="30dp"
+            app:borderWidth="0dp"
+            app:maxImageSize="@android:dimen/app_icon_size"
+            app:srcCompat="@drawable/twitter_icon" />
 
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/fab"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="10dp"
-                android:layout_marginLeft="20dp"
-                android:background="@color/colorPrimary"
-                android:backgroundTint="@color/colorPrimary"
-                android:text="R"
-                app:borderWidth="0dp"
-                app:maxImageSize="@android:dimen/app_icon_size"
-                app:srcCompat="@drawable/twitter_icon" />
-        </LinearLayout>
+    </LinearLayout>
 
-    </LinearLayout></ScrollView>
+
+    </RelativeLayout>
+
+

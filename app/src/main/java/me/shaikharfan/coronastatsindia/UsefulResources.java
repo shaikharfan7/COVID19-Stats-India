@@ -27,7 +27,7 @@ public class UsefulResources extends AppCompatActivity {
     public void onTapTracker(View view) {
         Intent viewIntent =
                 new Intent("android.intent.action.VIEW",
-                        Uri.parse("www.https://www.coronatracker.in"));
+                        Uri.parse("https://www.coronatracker.in"));
         startActivity(viewIntent);
     }
 

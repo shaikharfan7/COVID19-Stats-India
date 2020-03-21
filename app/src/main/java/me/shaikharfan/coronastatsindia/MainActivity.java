@@ -54,56 +54,10 @@ public class MainActivity extends AppCompatActivity {
 
     public String countryCases, countryCured, countryDeaths, intTotal, localTotal;
 
-    public String stateName,stateName1,stateCases,stateCured,stateDeaths,stateHelpline;
-
-    Spinner stateTxt;
-    TextView statename,casevalue,curevalue,deathvalue,hlpValue;
-
-    //ThreadPool Max
-    static final int MAX_T = 10;
-
-
-    //Thread Pool
-    ExecutorService pool = Executors.newFixedThreadPool(MAX_T);
-
-    //
-    View x;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
-
-        //UPDATEINPUT
-        stateTxt = findViewById(R.id.textState);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.states_array, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        stateTxt.setAdapter(adapter);
-
-
-        //BUTTON
-        Button updatebtn = findViewById(R.id.update);
-
-        //State Card
-        CardView card = findViewById(R.id.card);
-        statename = findViewById(R.id.updatedStateName);
-        TextView case1 = findViewById(R.id.cases);
-        TextView cured = findViewById(R.id.cured_discharged);
-        TextView death = findViewById(R.id.deathState);
-        TextView helpline = findViewById(R.id.helpline); //on tap open phoneapp
-
-        case1.setText("Cases");
-        cured.setText("Cured");
-        death.setText("Deaths");
-        helpline.setText("Helpline");
-
-         casevalue = findViewById(R.id.casesval);
-         curevalue = findViewById(R.id.cured_dischargedval);
-         deathvalue = findViewById(R.id.deathStateVal);
-         hlpValue = findViewById(R.id.stateHelplineval);
 
         //Country Card
         CardView countryCard = findViewById(R.id.card2);
@@ -128,9 +82,7 @@ public class MainActivity extends AppCompatActivity {
         deathTotal.setText ("Total Deaths In India");
 
 
-
         th1.start();
-        //th2.start();
         while (th1.isAlive()){
         locTotal.setText(localTotal);
         IntTotVal.setText(intTotal);
@@ -139,22 +91,6 @@ public class MainActivity extends AppCompatActivity {
         deadTotal.setText(countryDeaths);
         }
 
-
-        while(th2.isAlive()){
-            try{
-                    statename.setText(stateName1);
-                    casevalue.setText(stateCases);
-                    curevalue.setText(stateCured);
-                    deathvalue.setText(stateDeaths);
-                    hlpValue.setText(stateHelpline);
-                }
-            catch (Exception e){
-
-                Log.d(TAG,"App Crashed In setFields!");
-                e.printStackTrace();
-
-            }
-        }
 
 
         FloatingActionButton fab = findViewById(R.id.fab);
@@ -258,171 +194,7 @@ public class MainActivity extends AppCompatActivity {
         countryDeaths = cdata.get("deaths").toString();
         intTotal = cdata.get("confirmedCasesForeign").toString();
         localTotal = cdata.get("confirmedCasesIndian").toString();
-    }
+    }}
 
-
-
-
-    //Thread2 for state data default
-    Thread th2 = new Thread(new Runnable() {
-        @Override
-        public void run() {
-            String sURL = "https://exec.clay.run/kunksed/mohfw-covid"; //DATA SOURCE URL
-            // Connect to the URL using java's native library
-            URL url = null;
-            try {
-                url = new URL(sURL);
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
-            }
-            URLConnection request = null;
-            try {
-                request = url.openConnection();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            try {
-                request.connect();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-            // Convert to a JSON object to print data
-            JsonParser jp = new JsonParser(); //from gson
-            JsonElement root = null; //Convert the input stream to a json element
-            try {
-                root = jp.parse(new InputStreamReader((InputStream) request.getContent()));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            JsonObject rootobj = root.getAsJsonObject(); //May be an array, may be an object.
-            JsonObject sdata = rootobj.getAsJsonObject("stateData");
-            String goadata = sdata.get("Goa").toString();
-            Log.d(TAG, "onDone: " + goadata);
-            Log.d(TAG,"Alive In thread 2 ");
-            defaultState(sdata);
-            String defaultState="Goa";
-            setStateData(sdata,defaultState);
-
-        }
-        });
-
-
-    private void defaultState(JsonObject data) {
-        String state = "Karnataka";
-        JsonObject statedata = (JsonObject) data.get(state);
-        String stateDeaths = statedata.get("deaths").toString();
-        Log.d(TAG,"State Deaths : " +stateDeaths);
-
-    }
-
-    public void setStateData(JsonObject data,String stateName){
-        Character tempRep= '"';
-        Character empty = Character.MIN_VALUE;
-        JsonObject statedata = (JsonObject) data.get(stateName);
-        //String stateDeaths = statedata.get("deaths").toString();
-        stateName1 = stateName;
-        stateCases = statedata.get("cases").toString().replace(tempRep,empty);
-        stateCured = statedata.get("cured_discharged").toString().replace(tempRep,empty);
-        stateDeaths = statedata.get("deaths").toString().replace(tempRep,empty);
-        stateHelpline = statedata.get("helpline").toString().replace(tempRep,empty);
-    }
-
-    //Thread3 for updating State data
-    Thread th3 = new Thread(new Runnable() {
-        @Override
-
-        public void run() {
-            String sURL = "https://exec.clay.run/kunksed/mohfw-covid"; //DATA SOURCE UR
-            // Connect to the URL using java's native library
-                    URL url = null;
-                    try {
-                        url = new URL(sURL);
-                    } catch (MalformedURLException e) {
-                        e.printStackTrace();
-                    }
-                    URLConnection request = null;
-                    try {
-                        request = url.openConnection();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                    try {
-                        request.connect();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-
-                    // Convert to a JSON object to print data
-                    JsonParser jp = new JsonParser(); //from gson
-                    JsonElement root = null; //Convert the input stream to a json element
-                    try {
-                        root = jp.parse(new InputStreamReader((InputStream) request.getContent()));
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                    JsonObject rootobj = root.getAsJsonObject(); //May be an array, may be an object.
-                    JsonObject data = rootobj.getAsJsonObject("stateData");
-                    String stateValue=stateName;
-                    Log.d(TAG,"Alive In thread 3 with "+stateValue);
-                    try {
-                        Thread.sleep(1000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                    setStateData(data,stateValue);
-
-                    setFields(x);
-                    /*
-                    if(x!=null) {
-                    statename.setText(stateName1);
-                    casevalue.setText(stateCases);
-                    curevalue.setText(stateCured);
-                    deathvalue.setText(stateDeaths);
-                    hlpValue.setText(stateHelpline);
-                    }*/
-                }
-            });
-
-
-
-    //State
-    public void updateState(View v) {
-        try {
-            x = v;
-            stateName = stateTxt.getSelectedItem().toString();
-            pool.execute(th3);
-            //setFields(x);
-            Toast.makeText(this, "Updating State Data For " + stateName, Toast.LENGTH_LONG).show();
-            //Log.d(TAG,"ENTERED SNAME: " +stateName);
-            //Toast.makeText(this, "Updated State Data For " +stateName, Toast.LENGTH_SHORT).show();
-               }catch (Exception e) {
-            Log.d(TAG,"App Crashed In updateState!");
-            e.printStackTrace();
-
-    }
-    }
-
-
-    public void setFields(View x){
-
-        try{
-        if(x!=null) {
-        statename.setText(stateName1);
-        casevalue.setText(stateCases);
-        curevalue.setText(stateCured);
-        deathvalue.setText(stateDeaths);
-        hlpValue.setText(stateHelpline);
-        }}
-        catch (Exception e){
-
-            Log.d(TAG,"App Crashed In setFields!");
-            e.printStackTrace();
-
-        }
-    }
-
-
-}
 
 
