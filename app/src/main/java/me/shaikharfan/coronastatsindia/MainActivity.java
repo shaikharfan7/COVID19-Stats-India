@@ -82,6 +82,8 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(viewIntent);
                 }
             });
+
+
         }
             else{
             Toast.makeText(context, "Internet Not Available, Please Try Again Later", Toast.LENGTH_SHORT).show();

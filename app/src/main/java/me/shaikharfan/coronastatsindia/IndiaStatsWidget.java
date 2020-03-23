@@ -1,9 +1,12 @@
 package me.shaikharfan.coronastatsindia;
 
+import android.app.ActivityManager;
+import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.appwidget.AppWidgetProviderInfo;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.util.Log;
 import android.widget.RemoteViews;
@@ -33,9 +36,6 @@ import static android.content.ContentValues.TAG;
 public class IndiaStatsWidget extends AppWidgetProvider {
 
     public static String countryCases, countryCured, countryDeaths;
-
-
-
 
 
      static void updateAppWidget(Context context, AppWidgetManager appWidgetManager,int appWidgetId)
@@ -150,6 +150,7 @@ public class IndiaStatsWidget extends AppWidgetProvider {
     public void onDisabled(Context context) {
         // Enter relevant functionality for when the last widget is disabled
     }
+
 }
 
 
