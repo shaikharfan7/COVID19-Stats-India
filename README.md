@@ -6,8 +6,8 @@
 
 A simple android widget/app that shows the number of COVID19 cases in India.
 
-The basic purpose of building this mini project was to have the Basic STATS of COVID19-INDIA on your android phones homescreen
-instead of opening an app/webapp everytime to check basic stats.
+The purpose of building this mini project was to have the Basic STATS of COVID19-INDIA on your android phones homescreen
+instead of opening an app/webapp everytime.
 
 ## Data Source ##
 
