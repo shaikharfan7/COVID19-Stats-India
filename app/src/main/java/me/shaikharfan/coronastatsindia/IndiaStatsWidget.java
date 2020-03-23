@@ -25,6 +25,7 @@ import java.util.concurrent.Executors;
 
 import static android.content.ContentValues.TAG;
 
+
 /**
  * Implementation of App Widget functionality.
  * App Widget Configuration implemented in {@link IndiaStatsWidgetConfigureActivity IndiaStatsWidgetConfigureActivity}
@@ -32,15 +33,6 @@ import static android.content.ContentValues.TAG;
 public class IndiaStatsWidget extends AppWidgetProvider {
 
     public static String countryCases, countryCured, countryDeaths;
-    public static RemoteViews views,temp;
-    public static  CharSequence widgetText;
-
-    static final int MAX_T = 10;
-
-
-
-    //Thread Pool
-     ExecutorService pool = Executors.newFixedThreadPool(MAX_T);
 
       static Thread thw = new Thread(new Runnable() {
         @Override
@@ -79,45 +71,30 @@ public class IndiaStatsWidget extends AppWidgetProvider {
             JsonObject data = rootobj.getAsJsonObject("data"); //grabbing country data
             JsonObject cdata = data.getAsJsonObject("summary");
             Log.d(TAG, "run: In WidgetClass Thread");
-
             countryCases = cdata.get("total").toString();
             countryCured = cdata.get("discharged").toString();
             countryDeaths = cdata.get("deaths").toString();
-
             Log.d(TAG, "run: In WidgetClass Thread"+countryCases);
             Log.d(TAG, "run: In WidgetClass Thread"+countryCured);
             Log.d(TAG, "run: In WidgetClass Thread"+countryDeaths);
-            //setFields(countryCases,countryCured,countryDeaths);
-
-
 
         }
     });
 
 
 
-
-
-
-
-     static void updateAppWidget(Context context, AppWidgetManager appWidgetManager,
-                                int appWidgetId) {
-
-
-         widgetText = IndiaStatsWidgetConfigureActivity.loadTitlePref(context, appWidgetId);
+     static void updateAppWidget(Context context, AppWidgetManager appWidgetManager,int appWidgetId)
+     {
+        CharSequence widgetText = IndiaStatsWidgetConfigureActivity.loadTitlePref(context, appWidgetId);
         // Construct the RemoteViews object
-         views = new RemoteViews(context.getPackageName(), R.layout.india_stats_widget);
+        RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.india_stats_widget);
         views.setTextViewText(R.id.appwidget_text, widgetText);
-         temp = views;
 
          try {
-             //pool.execute(thw);
              thw.setPriority(10);
              thw.start();
-
              while(thw.isAlive()){
                  try {
-
                      Log.d(TAG, "run: In update"+countryCases);
                      Log.d(TAG, "run: In update"+countryCured);
                      Log.d(TAG, "run: In update"+countryDeaths);
@@ -130,35 +107,24 @@ public class IndiaStatsWidget extends AppWidgetProvider {
                      if(countryDeaths!=null) {
                          views.setTextViewText(R.id.deathstotalvalw, countryDeaths);
                      }
-                     //Thread.sleep(1000);
 
                  }catch (Exception e){
                      Log.d(TAG,"Crashed while setting fields");
                      e.printStackTrace();
-                 }
-
-             }
+                 }}
+             appWidgetManager.updateAppWidget(appWidgetId, views);
          }catch (Exception e) {
              Log.d(TAG,"App Crashed In updateAppWidget!");
              e.printStackTrace();
-
          }
 
-
-        // Instruct the widget manager to update the widget
-        appWidgetManager.updateAppWidget(appWidgetId, views);
-
     }
-
-
 
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
         // There may be multiple widgets active, so update all of them
-
         for (int appWidgetId : appWidgetIds) {
             updateAppWidget(context, appWidgetManager, appWidgetId);
-            Toast.makeText(context, "Widget has been updated! ", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -174,44 +140,13 @@ public class IndiaStatsWidget extends AppWidgetProvider {
     @Override
     public void onEnabled(Context context) {
         // Enter relevant functionality for when the first widget is created
-        try {
-            //pool.execute(thw);
-            thw.setPriority(10);
-            thw.start();
-
-            while(thw.isAlive()){
-                try {
-
-                    Log.d(TAG, "run: In update"+countryCases);
-                    Log.d(TAG, "run: In update"+countryCured);
-                    Log.d(TAG, "run: In update"+countryDeaths);
-                    if(countryCases!=null) {
-                        views.setTextViewText(R.id.casesvalw, countryCases);
-                    }
-                    if(countryCured!=null) {
-                        views.setTextViewText(R.id.cured_dischargedvalw, countryCured);
-                    }
-                    if(countryDeaths!=null) {
-                        views.setTextViewText(R.id.deathstotalvalw, countryDeaths);
-                    }
-                    //Thread.sleep(1000);
-
-                }catch (Exception e){
-                    Log.d(TAG,"Crashed while setting fields");
-                    e.printStackTrace();
-                }
-
-            }
-        }catch (Exception e) {
-            Log.d(TAG,"App Crashed In updateAppWidget!");
-            e.printStackTrace();
-
-        }
-    }
+     }
 
     @Override
     public void onDisabled(Context context) {
         // Enter relevant functionality for when the last widget is disabled
     }
 }
+
+
 

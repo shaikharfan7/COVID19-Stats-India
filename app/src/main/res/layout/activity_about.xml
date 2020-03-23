@@ -62,7 +62,6 @@
             android:textAlignment="center"
             android:layout_gravity="center"
             android:textColor="#FFFFFF">
-
         </TextView>
 
         <ImageButton
@@ -75,11 +74,8 @@
             android:textAlignment="center"
             android:layout_gravity="center"
             android:textColor="#FFFFFF">
-
         </ImageButton>
 
     </LinearLayout>
-
-
 
 </RelativeLayout>

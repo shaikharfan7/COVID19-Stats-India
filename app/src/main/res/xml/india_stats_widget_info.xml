@@ -4,7 +4,7 @@
     android:initialKeyguardLayout="@layout/india_stats_widget"
     android:initialLayout="@layout/india_stats_widget"
     android:minWidth="110dp"
-    android:minHeight="40dp"
+    android:minHeight="110dp"
     android:previewImage="@drawable/widget_example"
     android:updatePeriodMillis="1800000"
     android:widgetCategory="home_screen|keyguard"></appwidget-provider>

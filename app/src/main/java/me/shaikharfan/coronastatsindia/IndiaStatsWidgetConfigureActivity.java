@@ -74,7 +74,6 @@ public class IndiaStatsWidgetConfigureActivity extends Activity {
         // Set the result to CANCELED.  This will cause the widget host to cancel
         // out of the widget placement if the user presses the back button.
         setResult(RESULT_CANCELED);
-
         setContentView(R.layout.india_stats_widget_configure);
         mAppWidgetText = (EditText) findViewById(R.id.appwidget_text);
         findViewById(R.id.add_button).setOnClickListener(mOnClickListener);
@@ -92,7 +91,6 @@ public class IndiaStatsWidgetConfigureActivity extends Activity {
             finish();
             return;
         }
-
         mAppWidgetText.setText(loadTitlePref(IndiaStatsWidgetConfigureActivity.this, mAppWidgetId));
     }
 }
