@@ -94,25 +94,27 @@ public class IndiaStatsWidget extends AppWidgetProvider {
         // Construct the RemoteViews object
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.india_stats_widget);
         views.setTextViewText(R.id.appwidget_text, widgetText);
-
+        int i=3;
          try {
              thw.setPriority(10);
              thw.start();
-             while(thw.isAlive()){
+             while(thw.isAlive() && i!=0){
                  try {
                      Log.d(TAG, "run: In update "+countryCases);
                      Log.d(TAG, "run: In update "+countryCured);
                      Log.d(TAG, "run: In update "+countryDeaths);
                      if(countryCases!=null) {
                          views.setTextViewText(R.id.casesvalw, countryCases);
+                         i--;
                      }
                      if(countryCured!=null) {
                          views.setTextViewText(R.id.cured_dischargedvalw, countryCured);
+                         i--;
                      }
                      if(countryDeaths!=null) {
                          views.setTextViewText(R.id.deathstotalvalw, countryDeaths);
+                         i--;
                      }
-
                  }catch (Exception e){
                      Log.d(TAG,"Crashed while setting fields");
                      e.printStackTrace();
