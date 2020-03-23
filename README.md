@@ -10,8 +10,11 @@ instead of opening an app/webapp everytime to check basic stats.
 
 ## Data Source ##
 
-Used [API](https://api.rootnet.in/covid19-in/stats/latest) built by [Amod Malviya](https://github.com/amodm), which uses 
-data sourced from [The Ministry of Health and Family Welfare](https://www.mohfw.gov.in/)
+ [![Github](https://github.com/shaikharfan7/COVID19-Stats-India/blob/master/app/src/main/res/drawable/github_button.png)](https://github.com/amodm/api-covid19-in)
+
+
+ Used [API](https://api.rootnet.in/covid19-in/stats/latest) built by [Amod Malviya](https://github.com/amodm), which uses 
+ data sourced from [The Ministry of Health and Family Welfare](https://www.mohfw.gov.in/)
 
 ## Download Links ##
 
@@ -32,4 +35,12 @@ data sourced from [The Ministry of Health and Family Welfare](https://www.mohfw.
 - [Android Studio](https://developer.android.com/studio)
 - [COVID19 Rest API for India](https://github.com/amodm/api-covid19-in)
 - [Java](https://www.java.com/en/download/)
+
+## Support
+
+If you like this repo or find it useful, please consider (★) starring it.
+
+
+## License
+[GNU General Public License v3.0](https://choosealicense.com/licenses/gpl-3.0/)
 
