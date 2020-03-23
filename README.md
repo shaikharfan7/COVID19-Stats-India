@@ -21,10 +21,11 @@ instead of opening an app/webapp everytime to check basic stats.
 
 ## Screenshots ##
  
- [!Screenshot1-The Widget]()
- [!Screenshot2-App Dashboard]()
- [!Screenshot3-Some Useful Resources]()
+ [!Screenshot1-The Widget](https://github.com/shaikharfan7/COVID19-Stats-India/blob/master/App%20Screenshots/1.jpeg)
+ [!Screenshot2-App Dashboard](https://github.com/shaikharfan7/COVID19-Stats-India/blob/master/App%20Screenshots/2.jpeg)
+ [!Screenshot3-Some Useful Resources](https://github.com/shaikharfan7/COVID19-Stats-India/blob/master/App%20Screenshots/3.jpeg)
 
+ (Note : Values in screenshots are old and not updated)
 
 ## Contributing ##
 ### Ways you can contribute ###
