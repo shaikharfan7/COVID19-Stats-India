@@ -23,7 +23,10 @@ instead of opening an app/webapp everytime to check basic stats.
 
  (Note : values in screenshots are old and not updated)
 
-## Download Links ##
+## Download Link ##
+ 
+ - [APK Download](https://github.com/shaikharfan7/COVID19-Stats-India/releases/download/v1.0/app-release.apk)
+  
 
 ## Contributing ##
 ### Ways you can contribute ###
@@ -34,6 +37,7 @@ instead of opening an app/webapp everytime to check basic stats.
 - [Android Studio](https://developer.android.com/studio)
 - [COVID19 Rest API for India](https://github.com/amodm/api-covid19-in)
 - [Java](https://www.java.com/en/download/)
+- [Java serialization/deserialization library](https://github.com/google/gson)
 
 ## Support
 
