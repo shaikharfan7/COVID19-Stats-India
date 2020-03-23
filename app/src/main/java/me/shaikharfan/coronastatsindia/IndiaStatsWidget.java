@@ -34,9 +34,13 @@ public class IndiaStatsWidget extends AppWidgetProvider {
 
     public static String countryCases, countryCured, countryDeaths;
 
+
+    //Thread-Method used from https://github.com/google/gson
+
       static Thread thw = new Thread(new Runnable() {
         @Override
         public void run() {
+            //GITHUB - https://github.com/amodm/api-covid19-in
             String sURL = "https://api.rootnet.in/covid19-in/stats/latest"; //DATA SOURCE URL
 
             // Connect to the URL using java's native library
@@ -68,9 +72,10 @@ public class IndiaStatsWidget extends AppWidgetProvider {
                 e.printStackTrace();
             }
             JsonObject rootobj = root.getAsJsonObject(); //May be an array, may be an object.
-            JsonObject data = rootobj.getAsJsonObject("data"); //grabbing country data
-            JsonObject cdata = data.getAsJsonObject("summary");
+            JsonObject data = rootobj.getAsJsonObject("data"); //grabbing Json Data
+            JsonObject cdata = data.getAsJsonObject("summary");//grabbing country data
             Log.d(TAG, "run: In WidgetClass Thread");
+            //Setting data in global variables
             countryCases = cdata.get("total").toString();
             countryCured = cdata.get("discharged").toString();
             countryDeaths = cdata.get("deaths").toString();
@@ -95,9 +100,9 @@ public class IndiaStatsWidget extends AppWidgetProvider {
              thw.start();
              while(thw.isAlive()){
                  try {
-                     Log.d(TAG, "run: In update"+countryCases);
-                     Log.d(TAG, "run: In update"+countryCured);
-                     Log.d(TAG, "run: In update"+countryDeaths);
+                     Log.d(TAG, "run: In update "+countryCases);
+                     Log.d(TAG, "run: In update "+countryCured);
+                     Log.d(TAG, "run: In update "+countryDeaths);
                      if(countryCases!=null) {
                          views.setTextViewText(R.id.casesvalw, countryCases);
                      }

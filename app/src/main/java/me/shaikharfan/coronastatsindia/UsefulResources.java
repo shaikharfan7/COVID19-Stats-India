@@ -15,6 +15,7 @@ public class UsefulResources extends AppCompatActivity {
         setContentView(R.layout.activity_useful_resources);
     }
 
+    //Setting intents for buttons
 
     public void onTapGoCoronaGo(View view) {
         Intent viewIntent =

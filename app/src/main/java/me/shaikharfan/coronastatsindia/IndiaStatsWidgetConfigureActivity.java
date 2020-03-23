@@ -12,6 +12,10 @@ import android.widget.EditText;
 /**
  * The configuration screen for the {@link IndiaStatsWidget IndiaStatsWidget} AppWidget.
  */
+
+
+//Default WidgetConfiguration Activity from Android Studio
+
 public class IndiaStatsWidgetConfigureActivity extends Activity {
 
     private static final String PREFS_NAME = "me.shaikharfan.coronastatsindia.IndiaStatsWidget";

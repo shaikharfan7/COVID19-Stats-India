@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    //Thread1
+    //Thread1- Method used from https://github.com/google/gson
     Thread th1 = new Thread(new Runnable() {
         @Override
         public void run() {
@@ -151,15 +151,16 @@ public class MainActivity extends AppCompatActivity {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            JsonObject rootobj = root.getAsJsonObject(); //May be an array, may be an object.
-            JsonObject data = rootobj.getAsJsonObject("data"); //grabbing country data
-            JsonObject cdata = data.getAsJsonObject("summary");
+            JsonObject rootobj = root.getAsJsonObject();                    //May be an array, may be an object.
+            JsonObject data = rootobj.getAsJsonObject("data");              //grabbing Json data
+            JsonObject cdata = data.getAsJsonObject("summary");             //grabbing country summary
             Log.d(TAG,"Data: "+data);
             Log.d(TAG,"CountryData: "+cdata);
             setData(cdata);
         }
     });
 
+    //Setting data into global variables by using JsonObject
     public void setData(JsonObject cdata){
         countryCases = cdata.get("total").toString();
         countryCured = cdata.get("discharged").toString();

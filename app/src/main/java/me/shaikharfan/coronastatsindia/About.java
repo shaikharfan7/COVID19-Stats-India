@@ -20,6 +20,8 @@ public class About extends AppCompatActivity {
         setContentView(R.layout.activity_about);
     }
 
+    //Setting intents for buttons
+
     public void onTapArfan(View view) {
         Intent viewIntent =
                 new Intent("android.intent.action.VIEW",
