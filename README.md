@@ -1,6 +1,8 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-[![To know more about me visit](https://github.com/shaikharfan7/COVID19-Stats-India/blob/master/app/src/main/res/drawable/site_button.png)](http://shaikharfan.me)
+
 [![Follow me on Twitter](https://img.shields.io/twitter/follow/shaikharfan7?style=social)](https://twitter.com/shaikharfan7)
+
+[![To know more about me visit](https://github.com/shaikharfan7/COVID19-Stats-India/blob/master/app/src/main/res/drawable/site_button.png)](http://shaikharfan.me)
 
 # COVID19-Stats-India-Widget
 
@@ -17,14 +19,13 @@ instead of opening an app/webapp everytime to check basic stats.
  Used [API](https://api.rootnet.in/covid19-in/stats/latest) built by [Amod Malviya](https://github.com/amodm), which uses 
  data sourced from [The Ministry of Health and Family Welfare](https://www.mohfw.gov.in/)
 
-## Download Links ##
-
-
 ## Screenshots ##
  
  ![Screenshot1-The Widget](https://github.com/shaikharfan7/COVID19-Stats-India/blob/master/App%20Screenshots/1.jpeg)
 
  (Note : values in screenshots are old and not updated)
+
+## Download Links ##
 
 ## Contributing ##
 ### Ways you can contribute ###
