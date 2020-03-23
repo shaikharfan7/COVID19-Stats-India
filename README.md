@@ -21,7 +21,7 @@ instead of opening an app/webapp everytime to check basic stats.
 
 ## Screenshots ##
  
- [!Screenshot1-The Widget](https://github.com/shaikharfan7/COVID19-Stats-India/blob/master/App%20Screenshots/1.jpeg)
+ [![Screenshot1-The Widget](https://github.com/shaikharfan7/COVID19-Stats-India/blob/master/App%20Screenshots/1.jpeg)]
 
  (Note : values in screenshots are old and not updated)
 
