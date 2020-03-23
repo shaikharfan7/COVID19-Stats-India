@@ -1,5 +1,6 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![To know more about me visit](https://github.com/shaikharfan7/COVID19-Stats-India/blob/master/app/src/main/res/drawable/site_button.png)](http://shaikharfan.me)
+[![Follow me on Twitter](https://img.shields.io/twitter/follow/shaikharfan7?style=social)](https://twitter.com/shaikharfan7)
 
 # COVID19-Stats-India-Widget
 
